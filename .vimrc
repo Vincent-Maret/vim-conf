@@ -29,10 +29,14 @@ call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
 Plug 'preservim/nerdtree'
-
+Plug 'drewtempelmeyer/palenight.vim'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
 
 " Start NERDTree and leave the cursor in it.
 autocmd VimEnter * NERDTree
+
+" Use pale night theme
+set background=dark
+colorscheme palenight
