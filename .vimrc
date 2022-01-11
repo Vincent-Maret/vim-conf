@@ -37,6 +37,8 @@ call plug#end()
 " Start NERDTree and leave the cursor in it.
 autocmd VimEnter * NERDTree
 
-" Use pale night theme
+" Pale night theme conf
 set background=dark
 colorscheme palenight
+let g:lightline = { 'colorscheme': 'palenight' }
+let g:airline_theme = "palenight"
