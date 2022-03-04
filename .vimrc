@@ -11,7 +11,9 @@ set incsearch
 set hlsearch
 
 syntax on
-
+" Switch cursor for insert mode
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
 " ----------------
 " Automatic vim-plug installation
 " ----------------
