@@ -23,6 +23,8 @@ Plug 'preservim/nerdtree'
 Plug 'ekalinin/Dockerfile.vim'
 " Color theme
 Plug 'kyoz/purify', { 'rtp': 'vim' }
+" Eslint for VIM
+Plug 'dense-analysis/ale'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
