@@ -47,7 +47,7 @@ let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
 "use Purify colorscheme
-colorscheme purify"
+colorscheme purify
 
 " ----------------
 " Plugin specific settings 
