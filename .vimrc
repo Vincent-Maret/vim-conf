@@ -4,8 +4,8 @@
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+	silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " ----------------
@@ -17,7 +17,7 @@ call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
 
-" Nerdtree used to access a file tree into vim 
+" Nerdtree used to access a file tree into vim
 Plug 'preservim/nerdtree'
 " Plugin for Dockerfile syntax highlighting
 Plug 'ekalinin/Dockerfile.vim'
@@ -25,6 +25,8 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
 " Eslint for VIM
 Plug 'dense-analysis/ale'
+" Formatter
+Plug 'Chiel92/vim-autoformat'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -39,6 +41,9 @@ set number
 set showcmd
 set incsearch
 set hlsearch
+set tabstop=2
+set shiftwidth=2
+set expandtab
 
 syntax on
 
@@ -50,7 +55,7 @@ let &t_EI = "\e[2 q"
 colorscheme purify
 
 " ----------------
-" Plugin specific settings 
+" Plugin specific settings
 " ----------------
 
 " NERDTREE
@@ -58,3 +63,10 @@ colorscheme purify
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
+
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" AUTOFORMAT
+" format on save
+au BufWrite * :Autoformat
