@@ -1,4 +1,4 @@
-" ----------------
+": ----------------
 " Automatic vim-plug installation
 " ----------------
 
@@ -27,6 +27,8 @@ Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'dense-analysis/ale'
 " Formatter
 Plug 'Chiel92/vim-autoformat'
+" CTRL P
+Plug 'kien/ctrlp.vim'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
