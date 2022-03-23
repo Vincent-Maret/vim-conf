@@ -74,3 +74,6 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 " AUTOFORMAT
 " format on save
 au BufWrite * :Autoformat
+
+" CTRLP conf
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
